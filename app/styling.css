@@ -54,8 +54,9 @@ font-style:italic;
   padding:0px;
   border-left: 2px solid;
   border-bottom: 2px solid;
-  height:100%;
-  width:20%; }
+  height:2623px;
+  width:20%;
+ }
 
 .col-xs-12 #menu-column{
   width:100%;
@@ -72,15 +73,6 @@ font-style:italic;
 }
 #number-of-guests input{
   width: 50%;
-}
-.btnGuest{
-  font-size: 10pt;
-  font-style:bold;
-  width:30px;
-  height:20px;
-  padding:0px;
-  margin:0px;
-  border:0px;
 }
 
 /* meny table */ 
@@ -163,7 +155,7 @@ font-style:italic;
   padding-top:6%;
   padding-left:10%;
   padding-right:10%;
-  height:80%;
+  height:100%;
   overflow: scroll;
 }
 
@@ -257,7 +249,7 @@ font-style:italic;
 /* NAVIGATION BAR */ 
 
 #navigation-bar{
-  height:12%;
+  height:80px;
   margin:0px;
   background-color: #e6e6e6;
   border-bottom: 2px solid;

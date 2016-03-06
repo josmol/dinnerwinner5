@@ -1,0 +1,51 @@
+
+<ng-include src="'partials/navigationBar.html'" ng-controller="DinnerCtrl"></ng-include>
+
+
+ <!-- PAGE 5 --> 
+
+    <div class="col-md-12 col-xs-12 content-column5" id="page-5">
+      	<div id="dish-summary-display">
+      		<div class="col-md-12 dish-summary">
+      			<div class="col-md-3">
+      				<img src="{{getFullMenu.starter.ImageURL}}">
+				</div>
+				<div class="col-md-4">
+					<h2>{{getFullMenu.starter.Title}}</h2>
+					<p>{{getFullMenu.starter.Instructions}}</p>
+				</div>
+				<div class="col-md-5">
+					<h2>Preparation</h2>
+					<p>{{getFullMenu.starter.Instructions}}</p>
+				</div>
+			</div>
+			<div class="col-md-12 dish-summary">
+      			<div class="col-md-3">
+      				<img src="{{getFullMenu.main.ImageURL}}">
+				</div>
+				<div class="col-md-4">
+					<h2>{{getFullMenu.main.Title}}</h2>
+					<p>{{getFullMenu.main.Instructions}}</p>
+				</div>
+				<div class="col-md-5">
+					<h2>Preparation</h2>
+					<p>{{getFullMenu.main.Instructions}}</p>
+				</div>
+			</div>
+			<div class="col-md-12 dish-summary">
+      			<div class="col-md-3">
+      				<img src="{{getFullMenu.dessert.ImageURL}}">
+				</div>
+				<div class="col-md-4">
+					<h2>{{getFullMenu.dessert.Title}}</h2>
+					<p>{{getFullMenu.dessert.Instructions}}</p>
+				</div>
+				<div class="col-md-5">
+					<h2>Preparation</h2>
+					<p>{{getFullMenu.dessert.Instructions}}</p>
+				</div>
+			</div>
+		</div>
+   	</div> <!-- page-5--> 
+
+    <!-- END OF PAGE 5-->
