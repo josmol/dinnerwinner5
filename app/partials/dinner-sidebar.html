@@ -1,0 +1,65 @@
+<!-- TODO in Lab 5: Display the items on the menu with cost for each -->
+
+
+<!-- Displaying number of guests both in input box and here is redundant. It is here only for the example
+purpose so you can see how some information from the model can be retrieved. In Lab 5 you will replace 
+this with Total price of the menu -->
+
+	<div id="menu-column" class="col-md-2 col-xs-12">
+      <div class="col-md-12">
+        <h2>My Dinner </h2>
+        <div id="number-of-guests" class="col-md-8 col-xs-8">
+          People <input type="number" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)"/>
+      	</div>
+      </div> <!-- col md 12 -->
+
+    <!-- MENU TABLE --> 
+
+      <table class="table menu-table">
+        <thead>
+          <tr>
+            <th>Dish Name</th>
+            <th>Cost</th>
+            <th></th>
+          </tr>
+        </thead>
+          <tbody id="menu-dish">
+            <tr id="starterTr" ng-hide="checkStarterMenu()">
+              <td id="starterName">{{getFullMenu.starter.Title}}</td>
+              <td id="starterPrice">{{getPrice(getFullMenu.starter.Ingredients)}} SEK</td>
+              <td>
+                <button class="btn removebtn" id="removeStarter" ng-click="removeDish('starter')">X</button>
+              </td>
+            </tr>
+            <tr id="mainTr" ng-hide="checkMainMenu()">
+              <td id="mainName">{{getFullMenu.main.Title}}</td>
+              <td id="mainPrice">{{getPrice(getFullMenu.main.Ingredients)}} SEK</td>
+              <td>
+                <button class="btn removebtn" id="removeMain" ng-click="removeDish('main')">X</button>
+              </td>
+            </tr>
+            <tr id="dessertTr" ng-hide="checkDessertMenu()">
+              <td id="dessertName">{{getFullMenu.dessert.Title}}</td>
+              <td id="dessertPrice">{{getPrice(getFullMenu.dessert.Ingredients)}} SEK</td>
+              <td>
+                <button class="btn removebtn" id="removeDessert" ng-click="removeDish('dessert')">X</button>
+              </td>
+            </tr>
+            <tr id="pendingRow">
+              <td id="pendingName">Pending: {{getPending()[0].Title}}</td>
+              <td id="pendingPrice"> {{getPendingPrice()}} SEK</td>
+              <td></td>
+            </tr>
+            <tr id="dinnerCost">
+              <td>Total Cost: </td>
+              <td id="totalCost">{{getPrice(getFullMenu.starter.Ingredients)+getPrice(getFullMenu.main.Ingredients)+getPrice(getFullMenu.dessert.Ingredients)+getPendingPrice()}} SEK</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      
+      <div class="col-md-12">
+        <button class="btn btn-default" id="confirm-dinner" type="button" style="display: block; margin: 0 auto;">Confirm Dinner</button>
+      </div> <!-- menu content -->
+    
+    </div> <!-- col md 12 -->

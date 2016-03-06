@@ -1,0 +1,57 @@
+<!-- We include the sidebar as it is shared across two screens. -->
+<ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
+
+<!-- TODO in Lab 5: Display the dish information including image, Description, 
+Instructions, Ingredients and total cost. -->
+
+<!-- TIME FOR PAGE 3 WOHO --> 
+
+    <div id="page-3" class="col-md-10 content-column col-xs-12">
+      <div class="col-md-6">
+        <div id="dish-display">
+        	<div class="dishName">
+        		<h3>{{dish.Title}}</h3>
+        	</div>
+        	<img src="{{dish.ImageURL}}" id="image">
+			<div class="description">
+				<p>{{dish.Instructions}}</p>
+			</div>
+        </div>
+        <div id="button-row-goBack">
+        	<button class="btn btn-default" type="button" id="back-2-select" ng-click="removePending()" >
+        		<a ng-href="#/search">Go Back</a>
+        	</button>
+        </div> <!-- button row goBack --> 
+      </div>
+
+
+      <div id="ingridient-display" class="col-md-6 col-xs-12">
+        <span id="tableHeading"><h2>Recipe for {{getNumberOfGuests()}} people</h2></span>
+        <div class="line-separator"> </div>
+        <!-- TABLE THAT SHOWS ALL INGREDIENTS --> 
+        <table class="table" id="ingridient-list">
+          <tbody id="quantity">
+          	<tr ng-repeat="ingredient in ingredients">
+          		<td>{{ingredient.Quantity*getNumberOfGuests()}} st</td>
+          		<td>{{ingredient.Unit}}</td>
+          		<td>{{ingredient.Name}}</td>
+          		<td>{{ingredient.Quantity*getNumberOfGuests()}} SEK</td>
+          	</tr>
+          </tbody>
+        </table>
+        <div id="line-separator2"> </div>
+        <div class="recipeCost">
+        	<button class="btn btn-default" type="button" id="confirm-dish" ng-click="addToMenu()">
+        		<a ng-href="#/search">Confirm Dish</a>
+        	</button>
+          <span id="recipeCost">{{getDishPrice()}} SEK</span>
+        </div>
+        
+      </div> <!--ingridient-display-->
+      <div id="preparation-display" class="col-md-12 col-xs-12">
+        <h3>Preparations</h3>
+        <p>{{dish.Instructions}}</p>
+      </div><!--preparations-->
+    </div> <!-- PAGE 3 -->
+
+    <!-- END OF PAGE 3 -->

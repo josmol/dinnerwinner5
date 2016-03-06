@@ -1,0 +1,405 @@
+/* main basic grejer */
+html, body{
+  height:100%;  
+  margin:0px;
+}
+
+h2{
+  margin-bottom: 0.5%;
+  font-size:14pt;
+}
+
+.container{
+  height:100%;
+  width:100%;
+  margin:0px;
+  padding:0px;
+}
+
+.row{
+  height:100%;
+  margin:0px;
+}
+/* slut på main basic grejer */ 
+
+/* header grejer */ 
+.page-header
+{
+ background-color: #303030;
+ margin:0px;
+ height:17%;
+ border:none;
+}
+
+.page-header h1{
+  font-size:35pt;
+  margin-left: 2%;
+  position: absolute;
+  width:100%;
+  color:white;
+}
+
+.page-header h1 small{
+margin-left:2%;
+font-size:14pt;
+font-style:italic;
+}
+
+/* slut på header grejer */ 
+
+/* MENY */ 
+#menu-column{
+  background-color:#e6e6e6;
+  margin:0px;
+  padding:0px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  height:100%;
+  width:20%; }
+
+.col-xs-12 #menu-column{
+  width:100%;
+  height:10%;
+}
+
+#number-of-guests{
+  height: 100%;
+  margin:0px;
+  padding:0px;
+  position: relative;
+  top: 50%;
+  transform: translateY(+50%);
+}
+#number-of-guests input{
+  width: 50%;
+}
+.btnGuest{
+  font-size: 10pt;
+  font-style:bold;
+  width:30px;
+  height:20px;
+  padding:0px;
+  margin:0px;
+  border:0px;
+}
+
+/* meny table */ 
+.menu-table{
+  padding:0px;
+  margin:0px;
+  margin-top:100px;
+  font-size:9pt;
+}
+
+.menu-table th{
+  background-color: #303030;
+  color:white;
+
+}
+
+.menu-table td{
+  margin-left: 100px;
+}
+
+.removebtn{
+  margin:2px;
+  padding:2px;
+  width:100%;
+  font-size:8pt;
+}
+
+
+/* slut på meny */
+
+/* ALLMÄNT PAGE 1 & 3 */
+.content-column{
+  padding: 0%;
+  width:80%;
+  height:100%;
+  overflow:scroll;
+}
+
+
+/* PAGE 1 */
+
+#search-bar{
+  background-color: #d3d3d3;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-left: 2px solid;
+  height: 20%;
+}
+
+#line-separator1{
+  height:1px;
+  border-bottom:2px solid #313030;
+  margin-bottom:1%;
+}
+
+
+
+/* SEARCH BAR */
+
+.btn-group{
+  margin-left: 28.5%;
+  margin-top: -97px;
+}
+
+.input-group {
+  width: 300px;
+
+}
+.form-control{
+  margin-top: 20px;
+}
+/* SLUT PÅ SEARCH BAR */ 
+
+/* VISAR DISHES PÅ PAGE 1 */ 
+#dish-bar{
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  padding-bottom:5%;
+  padding-top:6%;
+  padding-left:10%;
+  padding-right:10%;
+  height:80%;
+  overflow: scroll;
+}
+
+.dish{
+  height: 300px;
+  width: 170px;
+  border: solid white;
+  padding:0px;
+  margin:2%;
+  text-align: center;
+}
+
+.dish h4{
+  width:170px;
+}
+
+#image{
+  width:170px; 
+  height:170px;
+  border-radius:20%;
+  object-fit: cover;
+  margin:0px;
+  padding:0px;
+}
+
+#title{
+  width:100%;
+  height: 40px;
+  text-align:center;
+  padding:2%;
+  background-color:#d3d3d3;
+  margin-top:8%;
+  border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+ }
+
+#description{
+  font-size:9pt;
+  padding:0px;
+  margin:0px;
+  text-align: justify;
+}
+
+/* SLUT PÅ VISAR DISHES PÅ PAGE 1 */ 
+/* SLUT PÅ PAGE 1 */ 
+
+/* PAGE 3 */
+
+#ingridient-display{
+  margin-top:2%;
+  border:0px solid;
+  background-color: #d3d3d3;
+  font-size:12pt;
+  border-radius:10px 10px 10px 10px;
+  width:46%;
+}
+
+#ingridient-display td{
+  border:none;
+}
+
+#ingridient-list{
+  background-color: transparent;
+  border:none;
+}
+
+.recipeCost{
+  padding-bottom:3%;
+}
+
+#recipeCost{
+  padding-right:5%;
+  float: right;
+}
+
+#dish-display #image{
+  width:300px;
+  height:300px;
+  border-radius:10%;
+  object-fit: cover;
+}
+
+#line-separator2{
+  height:0px;
+  background:#000000;
+  border-bottom:1px solid #000000;
+  margin-bottom:1%;
+  margin-top:1%;
+}
+
+/* NAVIGATION BAR */ 
+
+#navigation-bar{
+  height:12%;
+  margin:0px;
+  background-color: #e6e6e6;
+  border-bottom: 2px solid;
+  font-size: 15pt;
+}
+
+#left-navigation{
+  vertical-align: center;
+  text-align: left;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#right-navigation{
+  vertical-align: center;
+  text-align: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* SLUT PÅ NAVIGATION BAR */ 
+
+
+/* PAGE 4 */ 
+.line-separator3{
+  height:0px;
+  border-bottom:1px solid #000000;
+  margin-bottom:1%;
+  margin-left:10%;
+  margin-right:10%;
+}
+
+.price{
+  font-size:10pt;
+  padding:0px;
+  margin:0px;
+  text-align: right;
+}
+
+#display-price{
+  border-left:1px solid black;
+  padding-top:250px;
+  margin-top:36px;
+  margin-bottom:0px;
+  padding-bottom:0px;
+  }
+
+.col-xs-12 p{
+  padding-top:0px;
+  margin-top:0px;
+}
+
+.confirmed-dish{
+  height: 300px;
+  width: 170px;
+  border: solid white;
+  padding:0px;
+  margin:2%;
+  text-align: center;
+}
+
+#row4{
+  height:50%;
+}
+
+#page-4{
+  width:100%;
+}
+
+/* SLUT PÅ PAGE 4 */ 
+
+/* PAGE 5 */ 
+#page-5{
+  height:40%;
+  padding:0px;
+}
+
+.content-colum5{
+  width:100%;
+}
+
+.dish-summary{
+  width:100%;
+  height:100%;
+  margin:0px;
+  background-color: #d3d3d3;
+  padding-top:2%;
+  border-bottom: 1px solid #000000;
+  padding-bottom:2%;
+}
+
+.dish-summary img{
+  width:200px;
+  height:200px;
+  border-radius:10%;
+  object-fit: cover;
+}
+
+.dish-summary h2{
+  padding-top:0px;
+  margin-top:0px;
+}
+
+/* SLUT PÅ PAGE 5 */
+
+/* STARTPAGE */
+ .container-start{
+      height:100%;
+      width:100%;
+      margin:0px;
+      padding:0px;
+      background-image: url("images/chilitime.jpeg");
+      background-size: cover;
+      color:white;
+    }
+
+     #info-start{
+      background-color:rgba(88,88,88,0.5);
+      margin-top:10%;
+      margin-left:1%;
+      padding-top:1%;
+      padding-left:2%;
+      color:white;
+    }
+
+    #info-start h2{
+      font-size:20pt;
+      padding-top:0px;
+      margin-top:2%;
+    }
+
+
+#line-separator{
+      height:0px;
+      border-bottom:1px solid white;
+      margin-bottom:1%;
+      margin-top:1%;
+    }
+
+    .btn-custom{
+      background-color: #6b6b6b;
+      margin-bottom:5%;
+    }
