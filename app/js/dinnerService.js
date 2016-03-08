@@ -3,15 +3,21 @@
 // dependency on any service you need. Angular will insure that the
 // service is created first time it is needed and then just reuse it
 // the next time.
-dinnerPlannerApp.factory('Dinner',function ($resource) {
-  
-  this.number = 4;
+dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
+ 
+  var apiKey = "XKEdN82lQn8x6Y5jm3K1ZX8L895WUoXN";
+  this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:apiKey}); 
 
+  this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:apiKey});
 
   //Meny för alla valda recept att stoppas i
-  var menu = {'starter':[],'main':[],'dessert':[]};
-  var pending = [];
+  var menu = {
+    'starter': this.Dish.get({id:$cookieStore.get('starterID')}),
+    'main': this.Dish.get({id:$cookieStore.get('mainID')}),
+    'dessert':this.Dish.get({id:$cookieStore.get('dessertID')})
+  };
 
+  var pending = [];
 
   this.getPendingPrice = function(){  
       var pendingPrice = 0;
@@ -46,14 +52,16 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 
 //  ANTAL GÄSTER-RELATERAT
   this.setNumberOfGuests = function(num) {
-    this.number = num;
-    if (this.number <= 0){
-      this.number=0;
+    $cookieStore.remove('number')
+    $cookieStore.put('number', num);
+    if ($cookieStore.get('number') <= 0){
+      $cookieStore.remove('number')      
+      $cookieStore.put('number', 0);
     }
-  }
+   }
  
   this.getNumberOfGuests = function() {
-    return this.number;
+    return $cookieStore.get('number');
   }
 
 //  MENYRELATERAET
@@ -149,13 +157,16 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   this.addDishToMenu = function() {
         if(pending[0].Category == 'Appetizers'){
         menu.starter = pending[0];
-
+        $cookieStore.put('starterID', menu.starter.RecipeID)
         }
         if(pending[0].Category == 'Main Dish'){
           menu.main = pending[0];
+        $cookieStore.put('mainID', menu.main.RecipeID)
+
         }
         if(pending[0].Category == 'Desserts'){
           menu.dessert = pending[0];
+        $cookieStore.put('dessertID', menu.dessert.RecipeID)
         }
         console.log(menu);
         this.removeFromPending();
@@ -177,10 +188,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   }
 
 //  HÄMTA FRÅN BIG OVEN 
-var apiKey = "XKEdN82lQn8x6Y5jm3K1ZX8L895WUoXN";
-this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:apiKey}); 
 
-this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:apiKey});
 // TODO in Lab 5: Add your model code from previous labs
   // feel free to remove above example code
   // you will need to modify the model (getDish and getAllDishes) 

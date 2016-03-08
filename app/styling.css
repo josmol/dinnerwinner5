@@ -358,14 +358,14 @@ font-style:italic;
 /* SLUT PÅ PAGE 5 */
 
 /* STARTPAGE */
- .container-start{
+ #startPage{
       height:100%;
       width:100%;
       margin:0px;
       padding:0px;
       background-image: url("images/chilitime.jpeg");
       background-size: cover;
-      color:white;
+      color:#666666;
     }
 
      #info-start{
