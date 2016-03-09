@@ -1,0 +1,428 @@
+/* main basic grejer */
+@font-face {
+    font-family: Josefin Sans;
+    src: url(JosefinSans-Regular.ttf);
+}
+
+@font-face{
+  font-family: Merriweather;
+  src: url(Merriweather-Light.ttf);
+}
+
+html, body{
+  height:100%;  
+  margin:0px;
+  background-color: white;
+  font-family: Merriweather;
+}
+
+h2{
+  font-family: Josefin Sans;
+  font-size:14pt;
+}
+
+.container{
+  height:100%;
+  width:100%;
+  margin:0px;
+  padding-left:20px;
+  padding-right: 20px;
+}
+
+.row{
+  height:100%;
+  margin:0px;
+}
+/* slut på main basic grejer */ 
+
+/* header grejer */ 
+
+.page-header{
+  background-image: url("header_image.jpg");
+  margin:0px;
+  height:300px;
+  width:100%;
+  border:none;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.page-header h1{
+  font-family: Josefin Sans;
+  font-size:40pt;
+  margin-left: 2%;
+  position: absolute;
+  width:100%;
+  color:white;
+}
+
+.page-header h1 small{
+margin-left:2%;
+font-size:20pt;
+color:white;
+}
+
+#h-back{
+  height: 50%;
+  background-color:rgba(255,255,255, 0.1);
+}
+
+/* slut på header grejer */ 
+
+/* MENY */ 
+
+#menu-column{
+  height:300px;
+  background: #e6e6e6; /* fallback */
+  background:
+    linear-gradient(135deg, transparent 10px, #e6e6e6 0) top left,
+    linear-gradient(225deg, transparent 10px, #e6e6e6 0) top right,
+    linear-gradient(315deg, transparent 10px, #e6e6e6 0) bottom right,
+    linear-gradient(45deg,  transparent 10px, #e6e6e6 0) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  padding:0px;
+ }
+
+#menu-column p{
+  padding-left:15px;
+  padding-right:15px;
+}
+
+#menu-column h2{
+  padding-left:15px;
+  padding-right:15px; 
+}
+
+#confirm-div{
+  background: 
+    linear-gradient(315deg, transparent 10px, #555555 0) bottom right,
+    linear-gradient(45deg,  transparent 10px, #555555 0) bottom left;
+  background-size: 50% 100%;
+  height: 40px;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
+  padding-top:10px;
+  text-align: center;
+}
+
+#confirm-div a{
+  color:white;
+  font-family: Josefin Sans;
+  text-transform: uppercase;
+}
+
+/*.col-xs-12 #menu-column{
+  width:100%;
+  height:10%;
+}
+*/ 
+
+#number-of-guests{
+  padding:0px;
+}
+
+#number-of-guests input{
+  width: 30%;
+  padding-left:10px;
+  text-align: center;
+  margin-left:10px;
+
+}
+
+/* meny table */ 
+
+.menu-table{
+  padding:0px;
+  margin:0px;
+  font-size:9pt;
+}
+
+.menu-table th{
+  background-color: #303030;
+  color:white;
+
+}
+
+.menu-table td{
+  margin-left: 100px;
+}
+
+.removebtn{
+  margin:2px;
+  padding:2px;
+  width:100%;
+  font-size:8pt;
+}
+
+
+/* slut på meny */
+
+/* ALLMÄNT PAGE 1 & 3 */
+
+/* PAGE 1 */
+
+#search-bar{
+  height: 60px;
+  padding-right:55px;
+  padding-left:50px;
+  margin-top: 30px;
+}
+
+#search-bar a{
+  color: black;
+  font-family: Josefin Sans;
+  text-transform: uppercase;  
+
+}
+
+/* SLUT PÅ SEARCH BAR */ 
+
+#dish-bar{
+  height:100%;
+  overflow: scroll;
+  padding-left:50px;  
+  padding-right:50px;
+  text-align:center;
+}
+
+#dish-bar h2{
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+  } 
+
+h2 span { 
+    background:#fff; 
+    padding:0 20px; 
+}
+
+.dish{
+  height: 160px;
+  width: 120px;
+  margin: 10px;
+  padding:0px;
+}
+
+#image{
+  width:120px; 
+  height:120px;
+  object-fit: cover;
+}
+
+.dish h5{
+  font-family: 'Merriweather';
+  font-size:8pt;
+  width:120px;
+  padding-left:5px;
+  padding-right:5px;
+  margin:4px;
+ }
+
+
+#search-status{
+  text-transform: uppercase;
+  font-family: Josefin Sans;
+  text-align: center;
+  margin-bottom:2px;
+  padding-bottom:1px;
+  }
+
+/* SLUT PÅ VISAR DISHES PÅ PAGE 1 */ 
+/* SLUT PÅ PAGE 1 */ 
+
+/* PAGE 3 *//*
+
+#ingridient-display{
+  margin-top:2%;
+  border:0px solid;
+  background-color: #d3d3d3;
+  font-size:12pt;
+  border-radius:10px 10px 10px 10px;
+  width:46%;
+}
+
+#ingridient-display td{
+  border:none;
+}
+
+#ingridient-list{
+  background-color: transparent;
+  border:none;
+}
+
+.recipeCost{
+  padding-bottom:3%;
+}
+
+#recipeCost{
+  padding-right:5%;
+  float: right;
+}
+
+#dish-display #image{
+  width:300px;
+  height:300px;
+  border-radius:10%;
+  object-fit: cover;
+}
+
+#line-separator2{
+  height:0px;
+  background:#000000;
+  border-bottom:1px solid #000000;
+  margin-bottom:1%;
+  margin-top:1%;
+}
+
+/* NAVIGATION BAR */ 
+/*
+#navigation-bar{
+  height:80px;
+  margin:0px;
+  background-color: #e6e6e6;
+  border-bottom: 2px solid;
+  font-size: 15pt;
+}
+
+#left-navigation{
+  vertical-align: center;
+  text-align: left;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#right-navigation{
+  vertical-align: center;
+  text-align: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* SLUT PÅ NAVIGATION BAR */ 
+
+
+/* PAGE 4 */ /*
+.line-separator3{
+  height:0px;
+  border-bottom:1px solid #000000;
+  margin-bottom:1%;
+  margin-left:10%;
+  margin-right:10%;
+}
+
+.price{
+  font-size:10pt;
+  padding:0px;
+  margin:0px;
+  text-align: right;
+}
+
+#display-price{
+  border-left:1px solid black;
+  padding-top:250px;
+  margin-top:36px;
+  margin-bottom:0px;
+  padding-bottom:0px;
+  }
+
+.col-xs-12 p{
+  padding-top:0px;
+  margin-top:0px;
+}
+
+.confirmed-dish{
+  height: 300px;
+  width: 170px;
+  border: solid white;
+  padding:0px;
+  margin:2%;
+  text-align: center;
+}
+
+#row4{
+  height:50%;
+}
+
+#page-4{
+  width:100%;
+}
+
+/* SLUT PÅ PAGE 4 */ 
+
+/* PAGE 5 */ /*
+#page-5{
+  height:40%;
+  padding:0px;
+}
+
+.content-colum5{
+  width:100%;
+}
+
+.dish-summary{
+  width:100%;
+  height:100%;
+  margin:0px;
+  background-color: #d3d3d3;
+  padding-top:2%;
+  border-bottom: 1px solid #000000;
+  padding-bottom:2%;
+}
+
+.dish-summary img{
+  width:200px;
+  height:200px;
+  border-radius:10%;
+  object-fit: cover;
+}
+
+.dish-summary h2{
+  padding-top:0px;
+  margin-top:0px;
+}
+
+/* SLUT PÅ PAGE 5 */
+
+/* STARTPAGE *//*
+ #startPage{
+      height:100%;
+      width:100%;
+      margin:0px;
+      padding:0px;
+      background-image: url("images/chilitime.jpeg");
+      background-size: cover;
+      color:#666666;
+    }
+
+     #info-start{
+      background-color:rgba(88,88,88,0.5);
+      margin-top:10%;
+      margin-left:1%;
+      padding-top:1%;
+      padding-left:2%;
+      color:white;
+    }
+
+    #info-start h2{
+      font-size:20pt;
+      padding-top:0px;
+      margin-top:2%;
+    }
+
+
+#line-separator{
+      height:0px;
+      border-bottom:1px solid white;
+      margin-bottom:1%;
+      margin-top:1%;
+    }
+
+    .btn-custom{
+      background-color: #6b6b6b;
+      margin-bottom:5%;
+    }*/ 
+

@@ -5,17 +5,15 @@
 purpose so you can see how some information from the model can be retrieved. In Lab 5 you will replace 
 this with Total price of the menu -->
 
-	<div id="menu-column" class="col-md-2 col-xs-12">
-      <div class="col-md-12">
-        <h2>My Dinner </h2>
-        <div id="number-of-guests" class="col-md-8 col-xs-8">
-          People <input type="number" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)"/>
-      	</div>
-      </div> <!-- col md 12 -->
+	<div id="menu-column" class="col-md-3 col-xs-12">
+    <h2>My Dinner</h2>
+    <div id="number-of-guests" class="col-md-12 col-xs-8">
+     <p>People<input type="number" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)"/></p>
+    </div>
 
     <!-- MENU TABLE --> 
 
-      <table class="table menu-table">
+    <table class="table menu-table">
         <thead>
           <tr>
             <th>Dish Name</th>
@@ -58,8 +56,7 @@ this with Total price of the menu -->
           </tbody>
         </table>
       
-      <div class="col-md-12">
-        <a href="#/overView" class="btn btn-default" id="confirm-dinner" type="button" style="display: block; margin: 0 auto;">Confirm Dinner</a>
-      </div> <!-- menu content -->
+        <div class="col-md-12" id="confirm-div">
+        <a href="#/overView" id="confirm-dinner">Confirm Dinner</a></div>
     
     </div> <!-- col md 12 -->
