@@ -1,21 +1,22 @@
 <ng-include src="'partials/navigationBar.html'" ng-controller="DinnerCtrl"></ng-include>
 
+<div class="col-md-12 col-xs-12 content-column">
+  <div class="row">
+    <div class="col-md-3"></div>
 
-<!-- PAGE 4 --> 
-    <div id="page-4" class="col-md-12 col-xs-12 content-column">
-      	<div class="row" id="row4">
-        	<div class="col-md-3"></div>
-        	<div id="menu-display" class="col-md-6 col-xs-12">
-          		<div id="dishes4">
-          			<div class="confirmed-dish col-md-4">
-          				<h4>{{getFullMenu.starter.Category}}</h4>
-						<img src="{{getFullMenu.starter.ImageURL}}" id="image">
-						<h5 id="title">{{getFullMenu.starter.Title}}</h5>
-						<div class="price">
+    <div id="menu-display" class="col-md-6 col-xs-12">
+     	<div id="dishes4">
+     		<div class="confirmed-dish col-md-4">
+          <h4>{{getFullMenu.starter.Category}}</h4>
+					<img src="{{getFullMenu.starter.ImageURL}}" id="image">
+					<h5 id="title">{{getFullMenu.starter.Title}}</h5>
+            <div id="price">
 							<p>{{getPrice(getFullMenu.starter.Ingredients)}} SEK</p>
-						</div>
-					</div>
-					<div class="confirmed-dish col-md-4">
+						</div> <!-- end of price --> 
+				</div>
+
+
+		<div class="confirmed-dish col-md-4">
           				<h4>{{getFullMenu.main.Category}}</h4>
 						<img src="{{getFullMenu.main.ImageURL}}" id="image">
 						<h5 id="title">{{getFullMenu.main.Title}}</h5>
@@ -32,17 +33,15 @@
 						</div>
 					</div>
       			</div>
+                    <div class="row col-xs-12" style="text-align:center;">
+          <div class="line-separator3" id="line-separator-p3"></div> 
+          <a href="#/preparation" class="btn btn-default" type="button" id="print-full-recipe">Print Full Recipe</a>
+        </div> <!-- row --> 
   			</div> <!--menu display -->
 
-        	<div class="col-md-3 col-xs-12" id="display-price">
-        		<span id="totalPrice">{{getPrice(getFullMenu.starter.Ingredients)+getPrice(getFullMenu.main.Ingredients)+getPrice(getFullMenu.dessert.Ingredients)}} SEK</span>
-        	</div> <!-- display price -->
-      	</div> <!-- ROW -->
-            
-      	<div class="row col-xs-12" style="text-align:center;">
-        	<div class="line-separator3" id="line-separator-p3"></div> 
-        	<a href="#/preparation" class="btn btn-default" type="button" id="print-full-recipe">Print Full Recipe</a>
-      	</div> <!-- row --> 
-    </div> <!-- content column --> 
-
-    <!-- END OF PAGE 4 --> 
+    <div class="col-md-3 col-xs-12" id="display-price">
+      <span id="totalPrice">{{getPrice(getFullMenu.starter.Ingredients)+getPrice(getFullMenu.main.Ingredients)+getPrice(getFullMenu.dessert.Ingredients)}} SEK</span>
+    </div> <!-- end of display price -->
+  
+  </div> <!-- end of row -->
+</div> <!-- end of content column --> 
