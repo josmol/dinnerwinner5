@@ -5,7 +5,8 @@
  <!-- PAGE 5 --> 
 
     <div class="col-md-12 col-xs-12 content-column5" id="page-5">
-      	<div id="dish-summary-display">
+      		
+      		<div id="dish-summary-display" ng-hide="checkStarterMenu()">
       		<div class="col-md-12 dish-summary">
       			<div class="col-md-3">
       				<img src="{{getFullMenu.starter.ImageURL}}">
@@ -19,7 +20,8 @@
 					<p>{{getFullMenu.starter.Instructions}}</p>
 				</div>
 			</div>
-			<div class="col-md-12 dish-summary">
+
+			<div class="col-md-12 dish-summary" ng-hide="checkMainMenu()">
       			<div class="col-md-3">
       				<img src="{{getFullMenu.main.ImageURL}}">
 				</div>
@@ -32,7 +34,8 @@
 					<p>{{getFullMenu.main.Instructions}}</p>
 				</div>
 			</div>
-			<div class="col-md-12 dish-summary">
+
+			<div class="col-md-12 dish-summary" ng-hide="checkDessertMenu()">
       			<div class="col-md-3">
       				<img src="{{getFullMenu.dessert.ImageURL}}">
 				</div>

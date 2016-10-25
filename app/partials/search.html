@@ -1,42 +1,37 @@
-<div id="page-1" class="content-column">
+<div class="content-column col-md-9 col-xs-12">
 
 <!-- SEARCH BAR --> 
-  <div id="search-bar" class="col-md-9 col-xs-12">
+
+  <div id="search-bar" class="col-md-12 col-xs-12">
   
-  <div class="col-md-2"><a id="showall" ng-click="search('all')">Show all</a></div>
+    <div class="col-md-2 col-xs-12"><a id="showall" ng-click="search('all')">Show all</a></div>
+    <div class="col-md-2 col-xs-12"><a id="starter" ng-click="search('Appetizers')">Starter</a></div>
+    <div class="col-md-2 col-xs-12"><a id="main" ng-click="search('Main Dish')">Main dish</a></div>
+    <div class="col-md-2 col-xs-12"><a id="dessert" ng-click="search('Desserts')">Dessert</a></div>
 
-  <div class="col-md-2"><a id="starter" ng-click="search('Appetizers')">Starter</a></div>
-
-  <div class="col-md-2"><a id="main" ng-click="search('Main Dish')">Main dish</a></div>
-  <div class="col-md-2"><a id="dessert" ng-click="search('Desserts')">Dessert</a></div>
-
-    <div class="col-md-4 input-group">
-    <input type ="text" class ="form-control" placeholder="Search for..." ng-model="query"/>
+    <div class="col-md-4 col-xs-12 input-group">
+      <input type ="text" class ="form-control" placeholder="Search for..." ng-model="query"/>
         <span class="input-group-btn">
           <button class="btn btn-default" id="search" type="button" ng-click="search(query)" ng-init="search('all')">Search</button>        
         </span>
     </div> <!-- input-group --> 
-  </div>
-
+    
+  </div> <!-- end of search bar -->
 
     <!-- WHERE THE DISHES DISPLAYS :)-->
 
-  <div class="col-md-12 col-xs-12">
-    <div id="dish-bar" class="col-md-9">
-    <h2><span>{{status}}</span></h2>
+  <div id="dish-bar" class="col-md-12 col-xs-12">
+    <div class="status"><h2><span>{{status}}</span></h2></div>
       <div ng-repeat="dish in dishes" class="col-md-2 col-xs-6 dish {{dish.Category}}" id="{{dish.RecipeID}}" style="display:block">
-        <a ng-href="#/dish/{{dish.RecipeID}}" ng-click="addToPending(dish.RecipeID)">
+        <a ng-href="#/dish/{{dish.RecipeID}}" ng-click="addToPending(dish.RecipeID)" ng-click="load()">
           <img src="{{dish.ImageURL}}" id="image">
         </a>
         <h5>{{dish.Title}}</h5>
       </div>
-    </div>
+  </div> <!--dish-bar -->
 
-
-<!-- END OF PAGE 1 -->
+</div> <!-- content column-->
 
 <!-- We include the sidebar as it is shared across two screens. -->
-
 <ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
-  </div> <!--dish-bar -->
-</div> <!-- content column-->
+

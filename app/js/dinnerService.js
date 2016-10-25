@@ -5,20 +5,42 @@
 // the next time.
 dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
  
-  var apiKey = "XKEdN82lQn8x6Y5jm3K1ZX8L895WUoXN";
+  // GET DATA FROM BIG OVEN
+  var apiKey = "F088t4s6QGI5T92W3Nwiju8jFU52J8SP";
   this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:apiKey}); 
 
   this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:apiKey});
 
-  //Meny för alla valda recept att stoppas i
+  // MENU VARIABLE FROM COOKIES
   var menu = {
     'starter': this.Dish.get({id:$cookieStore.get('starterID')}),
     'main': this.Dish.get({id:$cookieStore.get('mainID')}),
     'dessert':this.Dish.get({id:$cookieStore.get('dessertID')})
   };
 
+  // PENDING DISH RELATED
   var pending = [];
 
+  // Add dish to pending
+  this.addToPending = function(dish){
+    console.log('dish',dish);
+    pending.push(dish);
+    console.log(pending);
+  };
+
+  // Remove pending dish
+  this.removeFromPending = function(){
+    while(pending.length > 0) {
+      pending.pop();
+    }
+  }
+
+  // Return pending dish
+  this.returnPending = function(){
+    return pending;
+  }
+
+  // Calculates pending price
   this.getPendingPrice = function(){  
       var pendingPrice = 0;
       if (pending.length !== 0){
@@ -32,25 +54,8 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
     else{return 0}
   }
 
-
-  this.addToPending = function(dish){
-    console.log('dish',dish);
-    pending.push(dish);
-    console.log(pending);
-  };
-
-  this.removeFromPending = function(){
-    while(pending.length > 0) {
-      pending.pop();
-    }
-  }
-
-  this.returnPending = function(){
-    return pending;
-  }
-
-
-//  ANTAL GÄSTER-RELATERAT
+  //  NUMBER OF GUESTS
+  // Updates number of guests 
   this.setNumberOfGuests = function(num) {
     $cookieStore.remove('number')
     $cookieStore.put('number', num);
@@ -60,12 +65,12 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
     }
    }
  
+ // Returns number of guests
   this.getNumberOfGuests = function() {
     return $cookieStore.get('number');
   }
 
-//  MENYRELATERAET
-
+  //  MENU RELATED
   //Returns the dish that is on the menu for selected type 
   this.getSelectedDish = function(type) {
     if(menu.starter.Category == type){ 
@@ -91,8 +96,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
     return menu;
   };
 
-// INGREDIENSER OCH PRIS 
 
+
+  // INGREDIENTS AND PRICE
   //Returns all ingredients for all the dishes on the menu.
   this.getAllIngredients = function(){
     var ingredientList = [];
@@ -109,7 +115,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
     }
 
   //Returns the total price of the menu (all the ingredients multiplied by number of guests).
-  //FUNKAR
   this.getTotalMenuPrice = function(allIngredients) {
     var pris = 0;
     for(x in allIngredients){
@@ -120,6 +125,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
     return totalPrice;
   };
 
+  // Calculates total dish price
   this.getTotalDishPrice = function(dish){
     var pris = 0;
     var personer = this.getNumberOfGuests();
@@ -130,6 +136,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
   };
 
 
+  // Gets all ingredients from menu-dishes
   this.getDishIngredients = function(type){
     var dishIngredientList = [];
     if(type == 'Appetizer'){
@@ -150,7 +157,6 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
     return dishIngredientList;
   }
 
-// LÄGG TILL OCH TA BORT FRÅN MENY
 
   //Adds the passed dish to the menu from list pending. If the dish of that type already exists on the menu
   //it is removed from the menu and the new one added.
@@ -173,34 +179,22 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
   };
 
   //Removes dish from menu
-  //FUNKAR
   this.removeDishFromMenu = function(type) {
     var removeValue = [];
     if (type == "starter"){
       menu.starter = removeValue;
+      $cookieStore.remove('starterID');
       }
     if(type == "main"){
       menu.main = removeValue;
+      $cookieStore.remove('mainID');
       }
     if(type == "dessert"){
       menu.dessert = removeValue;
+      $cookieStore.remove('dessertID');
       }
   }
 
-//  HÄMTA FRÅN BIG OVEN 
-
-// TODO in Lab 5: Add your model code from previous labs
-  // feel free to remove above example code
-  // you will need to modify the model (getDish and getAllDishes) 
-  // a bit to take the advantage of Angular resource service
-  // check lab 5 instructions for details
-
-
-
-  // Angular service needs to return an object that has all the
-  // methods created in it. You can consider that this is instead
-  // of calling var model = new DinnerModel() we did in the previous labs
-  // This is because Angular takes care of creating it when needed.
   return this;
 
 });

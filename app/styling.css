@@ -346,15 +346,8 @@ font-style:italic;
 .dish-summary img{
   width:200px;
   height:200px;
-  border-radius:10%;
   object-fit: cover;
 }
-
-.dish-summary h2{
-  padding-top:0px;
-  margin-top:0px;
-}
-
 /* SLUT PÅ PAGE 5 */
 
 /* STARTPAGE */
